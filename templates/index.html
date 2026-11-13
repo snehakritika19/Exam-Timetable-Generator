@@ -1,0 +1,82 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam Scheduler | AI Timetable Generator</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<header>
+    <h1>ExamScheduler</h1>
+    <p>AI-Powered Examination Timetable Generator</p>
+</header>
+
+<main>
+    <section class="hero">
+        <h2>Smart Examination Scheduling</h2>
+        <p>Generate conflict-free examination timetables using
+        Constraint Satisfaction Problem techniques.</p>
+
+        <form action="/generate" method="POST">
+            <button type="submit">Generate Timetable</button>
+        </form>
+    </section>
+
+    {% if error %}
+        <div class="error">{{ error }}</div>
+    {% endif %}
+
+    {% if timetable %}
+    <section class="results">
+        <h2>Generated Examination Timetable</h2>
+
+        <div class="stats">
+            <div>Search Nodes <strong>{{ nodes }}</strong></div>
+            <div>Backtracks <strong>{{ backtracks }}</strong></div>
+            <div>Constraint Violations <strong>{{ violations }}</strong></div>
+            <div>Execution Time <strong>{{ execution_time }} sec</strong></div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Subject</th>
+                        <th>Date</th>
+                        <th>Time</th>
+                        <th>Room</th>
+                        <th>Students</th>
+                        <th>Capacity</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    {% for exam in timetable %}
+                    <tr>
+                        <td>{{ exam.subject }}</td>
+                        <td>{{ exam.date }}</td>
+                        <td>{{ exam.time }}</td>
+                        <td>{{ exam.room }}</td>
+                        <td>{{ exam.enrollment }}</td>
+                        <td>{{ exam.capacity }}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+
+        <a class="download" href="/download">Download Timetable CSV</a>
+    </section>
+    {% endif %}
+</main>
+
+<footer>
+    <p>Constraint-Based Examination Timetable Generator | AIML Project</p>
+</footer>
+
+<script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
