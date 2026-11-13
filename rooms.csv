@@ -1,0 +1,7 @@
+
+room_id,room_name,capacity,building
+R01,Room 101,30,MAIN
+R02,Room 102,40,MAIN
+R03,Room 103,50,MAIN
+R04,Lab 201,35,MAIN
+R05,Lab 202,45,MAIN
