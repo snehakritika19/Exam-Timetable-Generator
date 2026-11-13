@@ -1,0 +1,140 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f3f6fc;
+    color: #202b45;
+}
+
+header {
+    background: #142b52;
+    color: white;
+    text-align: center;
+    padding: 28px;
+}
+
+header h1 {
+    margin-bottom: 8px;
+}
+
+main {
+    width: 90%;
+    max-width: 1100px;
+    margin: 35px auto;
+}
+
+.hero {
+    background: white;
+    text-align: center;
+    padding: 45px 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px #00000010;
+}
+
+.hero h2 {
+    margin-bottom: 15px;
+    color: #173d78;
+}
+
+.hero p {
+    margin-bottom: 25px;
+    line-height: 1.6;
+}
+
+button, .download {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 25px;
+    border-radius: 7px;
+    font-size: 15px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+button:hover, .download:hover {
+    background: #1746ae;
+}
+
+.results {
+    background: white;
+    margin-top: 30px;
+    padding: 25px;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+.results h2 {
+    margin-bottom: 20px;
+}
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 25px;
+}
+
+.stats div {
+    background: #edf3ff;
+    padding: 18px 10px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+.stats strong {
+    display: block;
+    margin-top: 10px;
+    color: #1746ae;
+}
+
+.table-container {
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 25px;
+}
+
+th, td {
+    padding: 13px;
+    border: 1px solid #dce3ef;
+    text-align: left;
+}
+
+th {
+    background: #173d78;
+    color: white;
+}
+
+tr:nth-child(even) {
+    background: #f3f6fc;
+}
+
+.error {
+    background: #ffe5e5;
+    color: #b42318;
+    padding: 15px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+
+footer {
+    text-align: center;
+    padding: 25px;
+    color: #68758a;
+}
+
+@media (max-width: 700px) {
+    .stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
